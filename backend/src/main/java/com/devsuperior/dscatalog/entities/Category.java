@@ -34,10 +34,10 @@ public class Category implements Serializable{
 	
 
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Instant createdAT;
+	private Instant createdAt;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Instant updatedAT;
+	private Instant updatedAt;
 	
 
 	public Category() {
@@ -68,22 +68,22 @@ public class Category implements Serializable{
 	}
 
 
-	public Instant getCreatedAT() {
-		return createdAT;
+	public Instant getCreatedAt() {
+		return createdAt;
 	}
 
-	public Instant getUpdatedAT() {
-		return updatedAT;
+	public Instant getUpdatedAt() {
+		return updatedAt;
 	}
 	
 	@PrePersist
 	public void prePersist() {
-		createdAT = Instant.now();
+		createdAt = Instant.now();
 		}
 	
 	@PreUpdate
 	public void preUpdate() {
-		updatedAT= Instant.now();
+		updatedAt= Instant.now();
 		}
 	
 	@Override

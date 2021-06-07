@@ -35,6 +35,7 @@ public class CategoryService {
 	public CategoryDTO finById(Long id) {
 		Optional<Category> obj = repository.findById(id);
 		Category entity = obj.orElseThrow(() -> new ResouceNotFoundException("Entity not found"));
+		
 		//.orElseThrow permite definir uma chamade de exception
 		
 		return new CategoryDTO(entity);
