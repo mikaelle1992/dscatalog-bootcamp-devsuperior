@@ -21,10 +21,7 @@ import javax.persistence.Table;
 public class Category implements Serializable{
 	/**serializable:padrao da linguagem java para o obj java possa ser convertido em Bytes, para que o obj seja gravada em arquivo
 	*,passar nas redes,uma pratica importante.
-	*/
-	/**
-	 * 
-	 */
+	*/	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
