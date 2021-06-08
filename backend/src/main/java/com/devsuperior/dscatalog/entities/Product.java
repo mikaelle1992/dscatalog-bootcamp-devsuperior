@@ -26,13 +26,13 @@ public class Product implements Serializable {
 	private Long id;
 	private String name;
 	
-	@Column(columnDefinition = "TEXT")
+	@Column(columnDefinition = "TEXT")// para aceitar textos na variavel
 	private String description;
 	private Double price;
 	private String imgUrl;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Instant date;// campo de data
+	private Instant date;//  data
 	
 	
 	@ManyToMany // mapear muitos p/muitos
@@ -43,7 +43,10 @@ public class Product implements Serializable {
 	
 	public Product() {
 	}
+	
 
+	
+	
 	public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		super();
 		this.id = id;
