@@ -2,6 +2,8 @@ package com.devsuperior.dscatalog.services;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -37,7 +39,7 @@ public class ProductService {
 	}
 
 	@Transactional(readOnly = true)
-	public ProductDTO finById(Long id) {
+	public ProductDTO findById(Long id) {
 		Optional<Product> obj = repository.findById(id);
 		Product entity = obj.orElseThrow(() -> new ResouceNotFoundException("Entity not found"));
 		// .orElseThrow permite definir uma chamade de exception
@@ -60,7 +62,7 @@ public class ProductService {
 			entity = repository.save(entity);
 			return new ProductDTO(entity);
 
-		} catch (ResouceNotFoundException e) {
+		} catch (EntityNotFoundException e) {
 			throw new ResouceNotFoundException("Id not found" + id);
 		}
 

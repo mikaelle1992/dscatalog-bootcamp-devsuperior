@@ -40,7 +40,7 @@ public class ProductResource {// implementa o controlador REST
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
 
-		ProductDTO dto = service.finById(id);
+		ProductDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 
 	}
