@@ -93,7 +93,7 @@ public class ProductServiceTests {
 	}
 	
 	@Test 
-	public void UpdateshowlThrowEntityNotFoundExceptionWhenIdDoesNotExists() {
+	public void UpdateshowlThrowResouceNotFoundExceptionWhenIdDoesNotExists() {
 		 
 		
 		Assertions.assertThrows(ResouceNotFoundException.class,()->{
